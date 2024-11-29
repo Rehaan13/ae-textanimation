@@ -1,0 +1,75 @@
+var charDelay = 0.05; // ~0.05 Time offset before the next character also starts to animate
+var charDur = 0.1; // ~0.1-0.2 How long each character animates
+var fps = 5; // ~5 Speed of random characters
+var baseHoldTime = 0.8; // Default for in case the hold time is not mentioned in the 2D array
+var adjustedHoldTime = 0; // Initializing
+var startText = "xxx"; // Initializing
+var endText = "yyy"; // Initializing
+var largerCharCount = 0; // Initializing
+
+// Array of words/phrases to animate through [Word, HoldTimeAdjustment]
+var wordArray = [
+					["EAT", 0],
+					["SLEEP", 0],
+					["LIVE", 0],
+					["LAUGH", -0.2],
+					["LOVE", 1],
+					["GET READY TO", 0],
+					["LOOP IT", 0]
+				]; 
+
+var totalWords = wordArray.length;
+
+var wordsTimeTotal = 0; // Cumulative time of words so far
+var w = 0; // Counter for current word we are on
+
+// Determine current word [w] based on time
+for (w = 0; w < totalWords; w++) {
+
+	startText = wordArray[w][0];
+	endText = (w + 1 < totalWords) ? wordArray[w + 1][0] : wordArray[0][0]; // Next word (w+1) or go to word 0 if end of array
+
+	// Applying word-specific hold time adjustment from 2D array
+	adjustedHoldTime = baseHoldTime + wordArray[w][1]; 
+	if (adjustedHoldTime < 0) { adjustedHoldTime = 0; } // Preventing negative holdtime
+
+	largerCharCount = Math.max(startText.length, endText.length);
+    var currentWordTime = adjustedHoldTime + (largerCharCount * charDelay) + charDur; // use the larger one because even a shorter start/end word will have to animate ALL characters of the larger word
+
+    if (time <= (wordsTimeTotal + currentWordTime)) {
+        break; // Stop once we've passed the current time
+    }
+	wordsTimeTotal += currentWordTime;
+}
+
+var t = time - adjustedHoldTime;
+
+var getRandomCharacter = function(seed) {
+    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    seedRandom(Math.floor(time * fps) + seed, true); // Use time for consistency across frames
+    return chars.charAt(random(0, chars.length));
+};
+
+var output = [];
+
+for (var i = 0; i < largerCharCount; i++) {
+    var myCharDelay = wordsTimeTotal + (charDelay * i);
+
+    if (t < myCharDelay) {
+        // Output char from original word
+        output.push(startText.charAt(i) || '');  // Add '' if no char at index i to avoid out of bounds
+    } else if (t < myCharDelay + charDur) {
+        // Output random character (junk)
+        output.push(getRandomCharacter(i));
+    } else {
+		// If startText is longer than endText, remove characters from the LEFT of startText
+        if (startText.length > endText.length) {
+            output.push(endText.charAt(i - (startText.length - endText.length)) || ''); // Start from the end of startText
+        } else {
+            output.push(endText.charAt(i) || ''); // Output char from the original word & Add '' if no char
+        }
+    }
+}
+
+// Return the final result (joined string)
+output.join('');
