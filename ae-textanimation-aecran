@@ -14,7 +14,7 @@ var wordArray = [
 					["LIVE", 0],
 					["LAUGH", -0.2],
 					["LOVE", 1],
-					["GET READY TO", 0],
+					["GETREADYTO", 0],
 					["LOOP IT", 0]
 				]; 
 
