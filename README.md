@@ -6,6 +6,7 @@ Similar to the "decode" text effect.
 This is a modified version of the script by *aespyrcranberry* posted on reddit : https://www.reddit.com/r/AfterEffects/comments/cz653u/comment/eywc9ny/
 
 # Usage
+- Copy the script from the 'ae-textanimation-aecran' file in this repository
 - The expression needs to be added to the "Source Text" of the desired layer.
 - Variables at the top of the script can be adjusted
 
