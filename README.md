@@ -9,13 +9,13 @@ This is a modified version of the script by *aespyrcranberry* posted on reddit :
 - The expression needs to be added to the "Source Text" of the desired layer.
 - Variables at the top of the script can be adjusted
 
-# The original script
+# Features of the original script
 - Totally contained within a single expression
 - Animates from one word to another
 - Choose your "random characters" set (eg. all caps, all lowercase, with/without numbers, etc)
 - Adjustments for per-character animation time, as well as delay for beginning the animation for each sequential character
 
-# Modifications made
+# Features added to this script
 - Animate between multiple words (via an array in the code)
 - Set "hold time" adjustment for each word individually within the array 
 - Loop back to the first word when the script reaches the end in the array (good for looping video)
