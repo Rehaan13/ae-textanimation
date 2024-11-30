@@ -5,7 +5,7 @@ Similar to the "decode" text effect.
 
 This is a modified version of the script by *aespyrcranberry* posted on reddit : https://www.reddit.com/r/AfterEffects/comments/cz653u/comment/eywc9ny/
 
-![Demo Video](https://packaged-media.redd.it/ftqsbz640v3e1/pb/m2-res_268p.mp4?m=DASHPlaylist.mpd&v=1&e=1732953600&s=bbf7acd0dcc34eebf34fb5cea620ea7426d9fad7)
+[DEMO VIDEO](https://www.reddit.com/r/AfterEffects/comments/1h2oa1z/100_expression_based_textanimation_needed_to/)
 
 # Usage
 - Copy the script from the 'ae-textanimation-aecran' file in this repository
