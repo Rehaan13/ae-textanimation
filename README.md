@@ -1,11 +1,12 @@
 # ae-textanimation
 After Effects Expression to animate directly between a set of words/phrases.
 
+[DEMO VIDEO](https://www.reddit.com/r/AfterEffects/comments/1h2oa1z/100_expression_based_textanimation_needed_to/)
+
 Similar to the "decode" text effect.
 
 This is a modified version of the script by *aespyrcranberry* posted on reddit : https://www.reddit.com/r/AfterEffects/comments/cz653u/comment/eywc9ny/
 
-[DEMO VIDEO](https://www.reddit.com/r/AfterEffects/comments/1h2oa1z/100_expression_based_textanimation_needed_to/)
 
 # Usage
 - Copy the script from the 'ae-textanimation-aecran' file in this repository
